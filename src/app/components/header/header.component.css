@@ -20,3 +20,15 @@
     cursor: pointer;
     font-size: 26px;
   }
+
+
+  .menu-items{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    cursor: pointer;
+  }
+
+  .menu-items p:hover{
+    opacity: 30%;
+  }
