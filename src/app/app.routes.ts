@@ -3,7 +3,7 @@ import { FindADoctorComponent } from './pages/find-a-doctor/find-a-doctor.compon
 
 export const routes: Routes = [
     {
-        path: 'app-find-a-doctor',
+        path: 'find-a-doctor',
         component: FindADoctorComponent
     }
 ];

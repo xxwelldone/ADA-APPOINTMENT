@@ -4,8 +4,12 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.page-title{
+    margin-top: 60px;
+    font-weight: 400;
 }
