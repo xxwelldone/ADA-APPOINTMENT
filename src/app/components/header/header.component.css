@@ -1,3 +1,4 @@
+
 .fixed-header {
     width: 100%;
     height: 109px;
@@ -6,7 +7,9 @@
     display: flex;
     align-items: center;
   }
-  
+  .logo {
+  cursor: pointer;
+}
   .fixed-header .container {
     width: 100%;
     margin: 0 25px;
