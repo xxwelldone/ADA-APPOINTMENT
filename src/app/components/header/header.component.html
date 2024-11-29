@@ -1,4 +1,4 @@
-<header class="fixed-header">
+<!-- <header class="fixed-header">
   <div class="container">
     <div class="logo" [routerLink]="['/']">
       <img src="../../../assets/ADA.svg" alt="" />
@@ -9,4 +9,21 @@
       <i class="fa-solid fa-bars"></i>
     </div>
   </div>
-</header>
+</header> -->
+
+
+<div class="fixed-header">
+  <div class="container">
+    <div class="logo" [routerLink]="['/']">
+      <img src="../../../assets/ADA.svg" alt="Logo ADA">
+    </div>
+
+    <div class="menu-items">
+      <p [routerLink]="['/my-appointments']">Minhas consultas</p>
+      <p [routerLink]="['/find-a-doctor']">Médicos cadastrados</p>
+    </div>
+
+    <i class="fa-solid fa-bars" (click)="toggleSidebar()"></i>
+    <app-sidebar></app-sidebar>
+  </div>
+</div>
