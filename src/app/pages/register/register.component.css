@@ -118,11 +118,10 @@
     background-color: var(--bg);
     display: flex;
     justify-content: center;
-    height: 100vh;
   }
   .register {
-    max-width: 726px;
-    max-height: 726px;
+    width: 726px;
+    height: 726px;
     padding: 74px;
     border-radius: 36px;
     box-shadow: 10px 10px 50px var(--gray-dark);
