@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="bg">
+  <article class="login">
+    <h2 class="login-title">Bem vindo a rede Ada</h2>
+    <form class="form">
+      <div class="login-user">
+        <img src="/assets/user.svg" alt="" srcset="" class="login-user-image" />
+        <p class="login-user-text">Login</p>
+      </div>
+      <div class="login-input">
+        <div class="login-data">
+          <label for="email">Digite seu e-mail</label>
+          <input type="email" id="email" />
+        </div>
+
+        <div class="login-data">
+          <label for="password">Digite seu e-mail</label>
+          <input type="password" id="password" />
+        </div>
+      </div>
+      <div class="login-btn">
+        <button class="access">ENTRAR</button>
+        <button class="register" [routerLink]="['/register']">CADASTRAR</button>
+      </div>
+    </form>
+  </article>
+</div>
