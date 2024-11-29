@@ -1,6 +1,6 @@
 <div class="bg">
   <article class="login">
-    <h2 class="login-title">Bem vindo a rede Ada Appointment</h2>
+    <h2 class="login-title">Bem vindo a rede Ada</h2>
     <form class="form">
       <div class="login-user">
         <img src="/assets/user.svg" alt="" srcset="" class="login-user-image" />
@@ -17,10 +17,10 @@
           <input type="password" id="password" />
         </div>
       </div>
-      <button class="access">ENTRAR</button>
+      <div class="login-btn">
+        <button class="access">ENTRAR</button>
+        <button class="register" [routerLink]="['/register']">CADASTRAR</button>
+      </div>
     </form>
-    <div class="register">
-      <p>Não tem conta? <span class="register-link">Crie uma aqui</span></p>
-    </div>
   </article>
 </div>

@@ -58,15 +58,26 @@
   justify-content: end;
   align-items: end;
 }
-.access {
+.access,
+.register {
   color: var(--white);
   font-size: 1rem;
-  background-color: var(--blue-easy);
   width: 150px;
   height: 48px;
   border-radius: 4px;
   border: none;
   align-self: flex-end;
+}
+.access {
+  background-color: var(--blue-easy);
+}
+.register {
+  background-color: var(--green-easy);
+}
+
+.access:hover,
+.register:hover {
+  opacity: 70%;
 }
 .form {
   display: flex;
@@ -80,6 +91,12 @@
 .register-link {
   font-size: 600;
   color: var(--blue-easy);
+  cursor: pointer;
+}
+.login-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 @media (min-width: 1024px) {
@@ -91,7 +108,7 @@
   }
   .login {
     max-width: 726px;
-    max-height: 818px;
+    max-height: 726px;
     padding: 74px;
     border-radius: 36px;
     box-shadow: 10px 10px 50px var(--gray-dark);

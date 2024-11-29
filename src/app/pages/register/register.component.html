@@ -1,0 +1,70 @@
+<div class="bg">
+  <article class="register">
+    <div class="register-title">
+      <h2 class="title">Cadastro</h2>
+      <img class="user" src="/assets/user.svg" alt="" />
+    </div>
+    <form class="form" [formGroup]="registerForm">
+      <div class="profile-section">
+        <h3 class="profile-title">Perfil</h3>
+        <div class="profile">
+          <div class="profile-option">
+            <input
+              type="radio"
+              name="role"
+              id="profile1"
+              value="USER"
+              formControlName="role"
+            />
+            <label for="profile1">Paciente</label>
+          </div>
+          <div class="profile-option">
+            <input
+              type="radio"
+              name="role"
+              id="profile2"
+              value="ADM"
+              formControlName="role"
+            />
+            <label for="profile2">Médico</label>
+          </div>
+        </div>
+      </div>
+      <div class="registration-section">
+        <div class="registration">
+          <label for="name">Nome completo</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div class="registration">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" formControlName="email" />
+        </div>
+        <div class="registration">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            #password
+          />
+        </div>
+        <div class="registration">
+          <label for="confirm">Confirmação de senha</label>
+          <input
+            type="password"
+            id="confirm"
+            formControlName="confirm"
+            #confirm
+          />
+        </div>
+      </div>
+      <button class="register-btn" (click)="onRegister()">REGISTRAR</button>
+
+      @if (warning){
+      <div class="warning">
+        <p class="warning">Senhas não são iguais.</p>
+      </div>
+      }
+    </form>
+  </article>
+</div>
