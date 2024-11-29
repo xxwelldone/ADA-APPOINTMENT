@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 118px;
+  width: 140px;
   height: 48px;
   background-color: var(--gray-intense);
   border-radius: 4px;
@@ -85,6 +85,7 @@
   outline: none;
   border: 1px solid var(--blue-intense);
   border-radius: 4px;
+  padding-inline: 8px;
 }
 .registration > input:focus {
   border: 2px solid var(--blue-easy);
@@ -97,6 +98,9 @@
   height: 48px;
   border-radius: 4px;
   align-self: flex-end;
+}
+.register-btn:hover {
+  opacity: 80%;
 }
 .warning {
   display: flex;
@@ -112,6 +116,9 @@
 }
 .registration > .ng-touched.ng-invalid {
   border: 2px solid var(--red);
+}
+.disabled {
+  background-color: var(--gray-dark);
 }
 @media (min-width: 1024px) {
   .bg {
