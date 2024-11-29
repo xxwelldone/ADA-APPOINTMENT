@@ -1,10 +1,8 @@
-import { Component, ElementRef, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
   FormControl,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
   ValidationErrors,
   ValidatorFn,
