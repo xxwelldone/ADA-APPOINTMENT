@@ -1,15 +1,193 @@
-.container{
-    height: calc(100vh - 109px);
-    margin-top: 30px;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.page-title{
-    margin-top: 60px;
-    font-weight: 400;
+/* Container principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    width: 100%; /* Garantir responsividade */
+}
+
+/* Título */
+.page-title {
+    font-size: 2rem; /* Tamanho dinâmico */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Área de médico */
+.medic-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+}
+
+.medic-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #004186;
+    object-fit: cover;
+}
+
+.medic-infos p {
+    margin: 5px 0;
+    font-size: 1rem; /* Responsivo */
+    color: #333;
+}
+
+/* Estilo ajustado da especialidade */
+.especialidade {
+    font-weight: bold;
+    color: #004186;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    margin: 5px 0;
+    font-size: 1rem; /* Ajustável */
+}
+
+/* Área de hospital */
+.hospital-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background-color: #e9f5ff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #004186;
+}
+
+.hospital-address-area p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.address-icon i {
+    font-size: 2rem; /* Ajustável */
+    color: #004186;
+    margin-top: 10px;
+}
+
+/* Área de horários */
+.time-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.times {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.9rem; /* Ajustável */
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.times.notempty {
+    background-color: #d1f5d3;
+    border-color: #28a745;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .page-title {
+        font-size: 1.8rem; /* Ajuste para telas médias */
+    }
+
+    .medic-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hospital-area, .medic-area {
+        max-width: 90%; /* Mais flexível */
+    }
+
+    .time-area {
+        grid-template-columns: repeat(4, 1fr); /* Ajuste */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .page-title {
+        font-size: 1.5rem; /* Ajuste para tablets */
+    }
+
+    .medic-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .time-area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .especialidade {
+        font-size: 0.9rem; /* Redução proporcional */
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.2rem; /* Ajuste para celulares */
+    }
+
+    .medic-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .time-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hospital-area, .medic-area {
+        max-width: 100%; /* Totalmente fluido */
+    }
+
+    .especialidade {
+        font-size: 0.8rem; /* Tamanho menor */
+    }
 }
