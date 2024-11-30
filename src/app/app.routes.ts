@@ -4,22 +4,15 @@ import { MyAppointmentsComponent } from './pages/my-appointments/my-appointments
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  },
-  {
-    path: 'find-a-doctor',
-    component: FindADoctorComponent,
-  },
-  {
-    path: 'my-appointments',
-    component: MyAppointmentsComponent,
-  },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: WelcomeComponent },
+  { path: 'schedule', component: ScheduleComponent },
+  { path: 'find-a-doctor', component: FindADoctorComponent },
+  { path: 'my-appointments', component: MyAppointmentsComponent },
 ];
