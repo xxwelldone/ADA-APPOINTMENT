@@ -1,7 +1,7 @@
 <div class="bg">
   <article class="login">
     <h2 class="login-title">Bem vindo a rede Ada</h2>
-    <form class="form">
+    <form class="form" [formGroup]="loginForm">
       <div class="login-user">
         <img src="/assets/user.svg" alt="" srcset="" class="login-user-image" />
         <p class="login-user-text">Login</p>
@@ -9,18 +9,21 @@
       <div class="login-input">
         <div class="login-data">
           <label for="email">Digite seu e-mail</label>
-          <input type="email" id="email" />
+          <input type="email" id="email" formControlName="email" />
         </div>
 
         <div class="login-data">
-          <label for="password">Digite seu e-mail</label>
-          <input type="password" id="password" />
+          <label for="password">Digite sua senha</label>
+          <input type="password" id="password" formControlName="password" />
         </div>
       </div>
       <div class="login-btn">
-        <button class="access">ENTRAR</button>
+        <button class="access" (click)="onLogin()">ENTRAR</button>
         <button class="register" [routerLink]="['/register']">CADASTRAR</button>
       </div>
     </form>
+    @if (shouldShow) {
+    <div class="warning">{{ warningMessage }}</div>
+    }
   </article>
 </div>
