@@ -98,7 +98,18 @@
   flex-direction: row;
   gap: 12px;
 }
-
+.login-data > .ng-touched.ng-invalid {
+  border: 2px solid var(--red);
+}
+.warning {
+  max-width: 24ch;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--red);
+  color: var(--white);
+  position: absolute;
+  bottom: 10px;
+}
 @media (min-width: 1024px) {
   .bg {
     background-color: var(--bg);
@@ -112,5 +123,6 @@
     padding: 74px;
     border-radius: 36px;
     box-shadow: 10px 10px 50px var(--gray-dark);
+    position: relative;
   }
 }

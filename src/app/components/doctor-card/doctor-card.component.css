@@ -42,7 +42,14 @@
 
 .especialidade {
   font-weight: bold;
-  color: #004186;
+    color: #004186;
+    text-align:left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    margin: 5px 0;
+    font-size: 0.75rem;
 }
 
 .hospital-area {
@@ -83,6 +90,7 @@
   border: 1px solid #004186;
   gap: 10px;
   padding: 10px;
+  word-wrap: break-word;
 }
 
 .times {
@@ -92,6 +100,7 @@
   height: 37px;
   border: 1px solid #004186;
   border-radius: 4px;
+  
 }
 
 .times:hover{
@@ -109,4 +118,120 @@
 .notempty:hover{
     cursor: default;
     background-color: #d9d9d9;
+}
+/* Responsividade */
+@media (max-width: 1024px) {
+  .container {
+      padding: 15px;
+      gap: 15px;
+      word-wrap: break-word;
+  }
+
+  .page-title {
+      font-size: 1.8rem; /* Ajuste para telas médias */
+  }
+
+  .medic-img {
+      width: 100px;
+      height: 100px;
+  }
+
+  .hospital-area, .medic-area {
+      max-width: 90%;
+      
+  }
+
+  .time-area {
+      grid-template-columns: repeat(4, 1fr); 
+      
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 8px;
+      gap: 10px;
+      display: flex;
+      overflow: hidden;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+  }
+
+  .page-title {
+      font-size: 1rem;
+  }
+
+  .medic-img {
+      width: 70px;
+      height: 70px;
+      justify-content: center;
+  }
+.medic-area{
+display: flex;
+flex-wrap: wrap;
+overflow: hidden;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;
+width: 100%;
+height: 100%;
+  }
+  .hospital-area{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+
+  .time-area {
+      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+  }
+  .medic-infos p{
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 2px;
+  }
+  .especialidade {
+      font-size: 0.6rem; /* Redução proporcional */
+  }
+}
+@media (max-width: 480px) {
+  .page-title {
+      font-size: 1.2rem; /* Ajuste para celulares */
+  }
+
+  .medic-img {
+      width: 70px;
+      height: 70px;
+  }
+
+  .time-area {
+      grid-template-columns: repeat(2, 1fr);
+      
+  }
+
+  .hospital-area, .medic-area {
+      max-width: 100%; /* Totalmente fluido */
+      
+  }
+
+  .especialidade {
+      font-size: 0.8rem; /* Tamanho menor */
+
+  }
 }
