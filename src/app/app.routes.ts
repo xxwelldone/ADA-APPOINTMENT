@@ -12,7 +12,16 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: WelcomeComponent },
-  { path: 'schedule', component: ScheduleComponent },
-  { path: 'find-a-doctor', component: FindADoctorComponent },
+  {
+    path: 'schedule',
+    children: [
+      {
+        path: '',
+        component: ScheduleComponent,
+      },
+      { path: ':specialty', component: FindADoctorComponent },
+    ],
+  },
+
   { path: 'my-appointments', component: MyAppointmentsComponent },
 ];

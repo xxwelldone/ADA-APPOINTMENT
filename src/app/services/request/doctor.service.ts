@@ -10,7 +10,7 @@ export class DoctorService {
   constructor(private http: HttpClient) {}
   private url = 'https://appointments-api-ur36.onrender.com';
 
-  get(): Observable<DoctorAppointment> {
-    return this.http.get<DoctorAppointment>(`${this.url}/doctors`);
+  get(): Observable<DoctorAppointment[]> {
+    return this.http.get<DoctorAppointment[]>(`${this.url}/doctors`);
   }
 }
