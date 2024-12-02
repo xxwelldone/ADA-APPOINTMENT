@@ -1,4 +1,6 @@
-<div [class.sidebar-active]="isOpen" class="sidebar">
+<div class="sidebar" [class.sidebar-active]="isOpen">
+  <button class="close-button" (click)="toggle()">X</button>
+  <div class="sidebar-header">
     <div class="sidebar-content">
       <div class="user-info">
         <img src="../../../assets/user.svg" alt="User" class="user-avatar" />
