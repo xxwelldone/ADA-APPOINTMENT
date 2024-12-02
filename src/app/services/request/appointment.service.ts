@@ -16,8 +16,8 @@ export class AppointmentService {
   getById(id: string): Observable<Appointment> {
     return this.http.get<Appointment>(`${this.url}/appointments/${id}`);
   }
-  post(doctorId: string, date: string, time: string) {
-    return this.http.post(`${this.url}/appointments`, {
+  post(doctorId: string, date: string, time: string): Observable<void> {
+    return this.http.post<void>(`${this.url}/appointments`, {
       doctorId: doctorId,
       date: date,
       time: time,

@@ -1,82 +1,47 @@
-<!-- <div class="schedule-container">
-  <h2 class="title">Marcar consulta</h2>
-  
-  <div class="card">
-    <div class="form-section">
-      <label class="form-label">Modalidade</label>
-      <div class="radio-group">
-        <div class="radio-option">
-          <input type="radio" name="modalidade" id="presencial" checked>
-          <label for="presencial">Presencial</label>
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="modalidade" id="online">
-          <label for="online">Online</label>
-        </div>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label">Especialidade</label>
-        <select class="select-input">
-          <option value="">Otorrinolaringologista</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label">Região</label>
-        <select class="select-input">
-          <option value="">Zona Norte</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label">Data da consulta</label>
-        <input type="date" class="date-input">
-      </div>
-
-      <button class="choose-doctor">Escolher médico</button>
-    </div>
-  </div>
-</div> -->
-
-
 <div class="schedule-container">
-    <h2 class="title">Marcar consulta</h2>
-
+  <h2 class="title">Marcar consulta</h2>
+  <form action="">
     <div class="card">
-        <div class="form-section">
-            <label class="form-label">Modalidade</label>
-            <div class="radio-group">
-                <div class="radio-option">
-                    <input type="radio" name="modalidade" id="presencial" checked>
-                    <label for="presencial">Presencial</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" name="modalidade" id="online">
-                    <label for="online">Online</label>
-                </div>
-            </div>
-
-            <div class="form-field">
-                <label class="form-label">Especialidade</label>
-                <select class="select-input">
-                    <option value="">Otorrinolaringologista</option>
-                </select>
-            </div>
-
-            <div class="form-field">
-                <label class="form-label">Região</label>
-                <select class="select-input">
-                    <option value="">Zona Norte</option>
-                </select>
-            </div>
-
-            <div class="form-field">
-                <label class="form-label">Data da consulta</label>
-                <input type="date" class="date-input">
-            </div>
-
-            <button class="choose-doctor">Escolher médico</button>
+      <div class="form-section">
+        <label class="form-label">Modalidade</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" name="modalidade" id="presencial" checked />
+            <label for="presencial">Presencial</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="modalidade" id="online" />
+            <label for="online">Online</label>
+          </div>
         </div>
+
+        <div class="form-field">
+          <label class="form-label">Especialidade</label>
+          <select class="select-input" [(ngModel)]="specialty" name="specialty">
+            <option value="cardiologista">Cardiologista</option>
+            <option value="General Surgery">Cirurgia Geral</option>
+            <option value="otorrinolaringologista">
+              Otorrinolaringologista
+            </option>
+          </select>
+        </div>
+
+        <!-- <div class="form-field">
+          <label class="form-label">Região</label>
+          <select class="select-input">
+            <option value="">Zona Norte</option>
+          </select>
+        </div> -->
+
+        <div class="form-field">
+          <label class="form-label">Data da consulta</label>
+          <input type="date" class="date-input" />
+        </div>
+
+        <button class="choose-doctor" (click)="onChoose()">
+          Escolher médico
+        </button>
+      </div>
     </div>
+  </form>
 </div>
