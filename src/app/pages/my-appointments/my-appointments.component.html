@@ -1,8 +1,6 @@
 <section class="container">
-    <h2 class="page-title">Minhas consultas</h2>
-    <app-appointment-card></app-appointment-card>
-    <app-appointment-card></app-appointment-card>
+  <h2 class="page-title">Minhas consultas</h2>
+  @for (item of appointments; track item.id) {
+  <app-appointment-card [appointment]="item"></app-appointment-card>
+  }
 </section>
-
-
-
