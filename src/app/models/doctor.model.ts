@@ -3,4 +3,8 @@ export interface Doctor {
   name: string;
   specialty: string;
   CRM: string;
+  hospital: string;
+  modalty: string;
+  address: string;
+  photoUrl: string;
 }

@@ -1,18 +1,18 @@
 <div class="container">
   <div class="medic-area">
-    <img src="../../../assets/224861261.png" alt="" class="medic-img" />
+    <img src="" alt="" class="medic-img" />
     <div class="medic-infos">
-      <p>Ivirson Daltro</p>
-      <p>CRM/SC: 123456</p>
-      <p class="especialidade">Otorrinolaringologista</p>
+      <p>{{ appointment.doctor.name }}o</p>
+      <p>CRM: {{ appointment.doctor.CRM }}</p>
+      <p class="especialidade">{{ appointment.doctor.specialty }}</p>
     </div>
   </div>
 
   <div class="hospital-area">
     <div class="hospital-address-area">
       <div class="hospital-address-infos">
-        <p class="especialidade">Hospital Santa Catarina</p>
-        <p>Av. Paulista, 200, Bela Vista</p>
+        <p class="especialidade">{{ appointment.doctor.hospital }}</p>
+        <p>{{ appointment.doctor.address }}</p>
       </div>
       <div>
         <i class="fa-solid fa-location-dot"></i>
@@ -28,8 +28,10 @@
         </thead>
         <tbody>
           <tr>
-            <td class="table-line">26/11/2024</td>
-            <td class="table-line">12:00</td>
+            <td class="table-line">
+              {{ appointment.date }}
+            </td>
+            <td class="table-line">{{ appointment.time }}</td>
           </tr>
         </tbody>
       </table>
@@ -41,24 +43,24 @@
       <p>Modalidade</p>
       <div class="modality-type">
         <div class="circle-status-type"></div>
-        <p>Presencial</p>
+        <p>{{ appointment.doctor.modalty }}</p>
       </div>
     </div>
     <div class="status">
       <p>Status</p>
       <div class="modality-status">
         <div class="circle-status-status"></div>
-        <p>Agendado</p>
+        <p>{{ appointment.status }}</p>
       </div>
     </div>
   </div>
 
   <div class="buttons-area">
-    <button class="button btn-cancelar">
+    <button class="button btn-cancelar" (click)="onCancel()">
       <i class="fa-solid fa-circle-xmark"></i>
       <p>Cancelar</p>
     </button>
-    <button class="button btn-edit">
+    <button class="button btn-edit" (click)="onEdit()">
       <i class="fa-solid fa-pen-to-square"></i>
       <p>Editar</p>
     </button>

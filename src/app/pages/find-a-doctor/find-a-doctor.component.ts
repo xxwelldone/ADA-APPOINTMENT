@@ -19,27 +19,27 @@ export class FindADoctorComponent implements OnInit {
   ) {}
   specialty: string = '';
   appointmentDate: string = '';
+  appointmentId!: string;
+
   doctors: DoctorAppointment[] = [];
 
   ngOnInit(): void {
     this.specialty = this.activatedRoute.snapshot.params['specialty'];
     this.appointmentDate = this.activatedRoute.snapshot.params['date'];
+    this.appointmentId = this.activatedRoute.snapshot.params['id'];
 
     this.getDoctors();
-    console.log(this.doctors);
   }
 
   getDoctors() {
     this.doctorApi
       .get()
       .pipe(
-        tap((result) => console.log(this.specialty)),
         map((result) =>
           result.filter((item) => item.specialty === this.specialty)
         )
       )
       .subscribe((response) => {
-        console.log(response);
         this.doctors = response;
       });
   }
