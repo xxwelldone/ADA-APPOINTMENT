@@ -1,7 +1,9 @@
-
 <section class="container">
   <h2 class="page-title">Escolha o médico</h2>
-  <app-doctor-card></app-doctor-card>
-  <app-doctor-card></app-doctor-card>
-  <app-doctor-card></app-doctor-card>
+  @for (item of doctors; track $index) {
+  <app-doctor-card
+    [DoctorDetails]="item"
+    [appointmentDate]="appointmentDate"
+  ></app-doctor-card>
+  }
 </section>

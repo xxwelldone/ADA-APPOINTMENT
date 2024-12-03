@@ -42,14 +42,14 @@
 
 .especialidade {
   font-weight: bold;
-    color: #004186;
-    text-align:left;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    max-width: 100%;
-    margin: 5px 0;
-    font-size: 0.75rem;
+  color: #004186;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  margin: 5px 0;
+  font-size: 0.75rem;
 }
 
 .hospital-area {
@@ -100,85 +100,98 @@
   height: 37px;
   border: 1px solid #004186;
   border-radius: 4px;
-  
 }
 
-.times:hover{
-    background-color: #004186;
-    cursor: pointer;
-    color: white;
+.times:hover {
+  background-color: #004186;
+  cursor: pointer;
+  color: white;
 }
 
-.notempty{
-    background-color: #d9d9d9;
-    color: white;
-    border: 1px solid #d9d9d9;
+.notempty {
+  background-color: #d9d9d9;
+  color: white;
+  border: 1px solid #d9d9d9;
 }
 
-.notempty:hover{
-    cursor: default;
-    background-color: #d9d9d9;
+.notempty:hover {
+  cursor: default;
+  background-color: #d9d9d9;
+}
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  background-color: var(--blue-easy);
+}
+.confirmation {
+  width: 28%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #004186;
 }
 /* Responsividade */
 @media (max-width: 1024px) {
   .container {
-      padding: 15px;
-      gap: 15px;
-      word-wrap: break-word;
+    padding: 15px;
+    gap: 15px;
+    word-wrap: break-word;
   }
 
   .page-title {
-      font-size: 1.8rem; /* Ajuste para telas médias */
+    font-size: 1.8rem; /* Ajuste para telas médias */
   }
 
   .medic-img {
-      width: 100px;
-      height: 100px;
+    width: 100px;
+    height: 100px;
   }
 
-  .hospital-area, .medic-area {
-      max-width: 90%;
-      
+  .hospital-area,
+  .medic-area {
+    max-width: 90%;
   }
 
   .time-area {
-      grid-template-columns: repeat(4, 1fr); 
-      
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .container {
-      padding: 8px;
-      gap: 10px;
-      display: flex;
-      overflow: hidden;
-      align-items: center;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
+    padding: 8px;
+    gap: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
   }
 
   .page-title {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .medic-img {
-      width: 70px;
-      height: 70px;
-      justify-content: center;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
   }
-.medic-area{
-display: flex;
-flex-wrap: wrap;
-overflow: hidden;
-justify-content: center;
-align-items: center;
-box-sizing: border-box;
-width: 100%;
-height: 100%;
+  .medic-area {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
   }
-  .hospital-area{
+  .hospital-area {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -190,48 +203,46 @@ height: 100%;
   }
 
   .time-area {
-      grid-template-columns: repeat(3, 1fr);
-      display: flex;
-      flex-wrap: wrap;
-      overflow: hidden;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
   }
-  .medic-infos p{
+  .medic-infos p {
     align-items: center;
     margin: 5px;
     padding: 5px;
     padding-top: 2px;
   }
   .especialidade {
-      font-size: 0.6rem; /* Redução proporcional */
+    font-size: 0.6rem; /* Redução proporcional */
   }
 }
 @media (max-width: 480px) {
   .page-title {
-      font-size: 1.2rem; /* Ajuste para celulares */
+    font-size: 1.2rem; /* Ajuste para celulares */
   }
 
   .medic-img {
-      width: 70px;
-      height: 70px;
+    width: 70px;
+    height: 70px;
   }
 
   .time-area {
-      grid-template-columns: repeat(2, 1fr);
-      
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .hospital-area, .medic-area {
-      max-width: 100%; /* Totalmente fluido */
-      
+  .hospital-area,
+  .medic-area {
+    max-width: 100%; /* Totalmente fluido */
   }
 
   .especialidade {
-      font-size: 0.8rem; /* Tamanho menor */
-
+    font-size: 0.8rem; /* Tamanho menor */
   }
 }
