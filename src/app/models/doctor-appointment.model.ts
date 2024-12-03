@@ -5,5 +5,9 @@ export interface DoctorAppointment {
   name: string;
   specialty: string;
   CRM: string;
-  appointments: AppointmentDoctor;
+  address: string;
+  hospital: string;
+  modalty: string;
+  photoUrl: string;
+  appointments: AppointmentDoctor[];
 }

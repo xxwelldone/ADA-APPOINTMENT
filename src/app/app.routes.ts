@@ -19,7 +19,7 @@ export const routes: Routes = [
         path: '',
         component: ScheduleComponent,
       },
-      { path: ':specialty', component: FindADoctorComponent },
+      { path: ':specialty/:date', component: FindADoctorComponent },
     ],
   },
 
