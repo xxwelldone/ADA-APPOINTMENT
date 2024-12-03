@@ -19,3 +19,6 @@
   --gray-easy: #ebe9e9;
   --gray-dark: #786d6d;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
