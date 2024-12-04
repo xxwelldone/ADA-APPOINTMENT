@@ -1,0 +1,68 @@
+<div class="bg">
+  <article class="register">
+    <div class="register-title">
+      <h2 class="title">Cadastro de Médicos</h2>
+    </div>
+    <form class="form" [formGroup]="doctorRegister">
+      <div class="profile-section">
+        <h3 class="profile-title">Modalidade</h3>
+        <div class="profile">
+          <div class="profile-option">
+            <input
+              type="radio"
+              name="modalty"
+              id="profile1"
+              value="online"
+              formControlName="modalty"
+            />
+            <label for="profile1">Online</label>
+          </div>
+          <div class="profile-option">
+            <input
+              type="radio"
+              name="modalty"
+              id="profile2"
+              value="presencial"
+              formControlName="modalty"
+            />
+
+            <label for="profile2">Presencial</label>
+          </div>
+        </div>
+      </div>
+      <div class="registration-section">
+        <div class="registration">
+          <label for="name">Nome completo</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div class="registration">
+          <label for="specialty">Especialidade</label>
+
+          <input type="text" id="specialty" formControlName="specialty" />
+        </div>
+        <div class="registration">
+          <label for="CRM">CRM</label>
+
+          <input type="text" id="CRM" formControlName="CRM" />
+        </div>
+        <div class="registration">
+          <label for="hospital">Hospital</label>
+
+          <input type="text" id="hospital" formControlName="hospital" />
+        </div>
+        <div class="registration">
+          <label for="address">Endereço</label>
+
+          <input type="text" id="address" formControlName="address" />
+        </div>
+        <div class="registration">
+          <label for="photoUrl">URL Foto</label>
+
+          <input type="text" id="photoUrl" formControlName="photoUrl" />
+        </div>
+      </div>
+
+      <button class="register-btn" (click)="onSubmit()">REGISTRAR</button>
+    </form>
+  </article>
+</div>
