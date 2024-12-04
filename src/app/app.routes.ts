@@ -6,12 +6,14 @@ import { RegisterComponent } from './pages/register/register.component';
 
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { doctorRegisterComponent } from './pages/doctor-register/doctor-register.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: WelcomeComponent },
+  { path: 'home', component: WelcomeComponent, canActivate: [authGuard] },
   {
     path: 'schedule',
     children: [
@@ -23,6 +25,15 @@ export const routes: Routes = [
       { path: ':specialty/:date/:id', component: FindADoctorComponent },
     ],
   },
+  {
+    path: 'doctorRegister',
+    component: doctorRegisterComponent,
+    canActivate: [authGuard],
+  },
 
-  { path: 'my-appointments', component: MyAppointmentsComponent },
+  {
+    path: 'my-appointments',
+    component: MyAppointmentsComponent,
+    canActivate: [authGuard],
+  },
 ];
