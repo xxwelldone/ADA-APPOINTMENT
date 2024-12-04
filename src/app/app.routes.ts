@@ -8,6 +8,8 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { doctorRegisterComponent } from './pages/doctor-register/doctor-register.component';
 import { authGuard } from './guards/auth.guard';
+import { roleGuard } from './guards/role.guard';
+import { roles } from './models/ENUM/roles.enum';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +30,10 @@ export const routes: Routes = [
   {
     path: 'doctorRegister',
     component: doctorRegisterComponent,
-    canActivate: [authGuard],
+    data: {
+      roles: roles.ADMIN,
+    },
+    canActivate: [authGuard, roleGuard],
   },
 
   {

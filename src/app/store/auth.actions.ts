@@ -6,3 +6,7 @@ export const setUser = createAction(
   Actions.SET_USER,
   props<{ user: AuthenticatedUser }>()
 );
+export const removeUser = createAction(
+  Actions.REMOVE_USER,
+  props<{ user: AuthenticatedUser }>()
+);
