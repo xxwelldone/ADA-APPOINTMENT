@@ -65,9 +65,6 @@ export class DoctorCardComponent {
     this.appointmentAPI
       .post(this.DoctorDetails.id, this.appointmentDate, this.time)
       .subscribe({
-        next: (respose) => {
-          console.log('Consulta agendada com sucesso');
-        },
         complete: () => {
           this.router.navigate(['/my-appointments']);
         },
@@ -80,7 +77,6 @@ export class DoctorCardComponent {
   }
   put() {
     this.editedAppointment.time = this.time;
-    console.log(this.editedAppointment);
 
     this.appointmentAPI.putById(this.editedAppointment).subscribe({
       complete: () => {

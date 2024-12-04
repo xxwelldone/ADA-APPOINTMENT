@@ -6,10 +6,11 @@
 
     <div class="menu-items">
       <p [routerLink]="['/my-appointments']">Minhas consultas</p>
+      @if (adm) {
       <p [routerLink]="['doctorRegister']">Cadastrar médicos</p>
+      }
     </div>
-
-    <i class="fa-solid fa-bars" (click)="toggleSidebar()"></i>
-    <app-sidebar></app-sidebar>
+    <!-- <i class="fa-solid fa-bars" (click)="toggleSidebar()"></i>
+    <app-sidebar></app-sidebar> -->
   </div>
 </div>

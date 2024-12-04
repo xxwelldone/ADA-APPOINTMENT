@@ -36,8 +36,6 @@ export class doctorRegisterComponent {
   onSubmit() {
     this.doctorApi.post(this.doctorRegister.getRawValue()).subscribe({
       complete: () => {
-        console.log('feito');
-
         this.doctorRegister.reset();
       },
     });

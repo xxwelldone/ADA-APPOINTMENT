@@ -33,7 +33,7 @@ export class AppointmentCardComponent {
   onCancel() {
     this.appointmentApi.changeStatusToCancel(this.appointment).subscribe({
       complete: () => {
-        console.log('feito');
+        this.router.navigate(['/']);
       },
       error: (err) => {
         console.log(err);

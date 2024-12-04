@@ -24,11 +24,14 @@ export class AppointmentService {
     });
   }
   putById(appointment: Appointment): Observable<void> {
-    return this.http.put<void>(`${this.url}/${appointment.id}`, appointment);
+    return this.http.put<void>(
+      `${this.url}/appointments/${appointment.id}`,
+      appointment
+    );
   }
   changeStatusToCancel(appointment: Appointment): Observable<void> {
     return this.http.put<void>(
-      `${this.url}/cancel/${appointment.id}`,
+      `${this.url}/appointments/cancel/${appointment.id}`,
       appointment
     );
   }
