@@ -1,4 +1,4 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -11,7 +11,9 @@ import {
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { requestsInterceptor } from './interceptors/requests.interceptor';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { lodingInterceptor } from './interceptors/loding.interceptor';
+import { provideStore, StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { userReducer } from './store/auth.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,5 +22,14 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch(), withInterceptors([requestsInterceptor])),
     provideEnvironmentNgxMask(),
     provideAnimationsAsync(),
+    provideStore(),
+    importProvidersFrom(
+      StoreModule.forRoot({
+        user: userReducer,
+      }),
+      StoreDevtoolsModule.instrument({
+        maxAge: 25,
+      })
+    ),
   ],
 };

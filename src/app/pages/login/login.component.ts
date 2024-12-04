@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+import { Store } from '@ngrx/store';
+import { setUser } from '../../store/auth.actions';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +26,8 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private ngrxStore: Store
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +39,8 @@ export class LoginComponent {
   onLogin() {
     this.auth.login(this.loginForm.getRawValue()).subscribe({
       next: (result) => {
-        sessionStorage.setItem('TOKEN', result.token);
+        // sessionStorage.setItem('TOKEN', result.token);
+        this.ngrxStore.dispatch(setUser({ user: result }));
       },
       complete: () => {
         this.router.navigate(['/home']);

@@ -1,18 +1,23 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { selectUser } from '../store/auth.selector';
 
 export const requestsInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = sessionStorage.getItem('TOKEN');
+  // const token = sessionStorage.getItem('TOKEN');
+  const store = inject(Store);
   const router = inject(Router);
+  const user$ = store.select(selectUser);
+  let token;
+  user$.subscribe((result) => {
+    token = result?.token;
+  });
 
   if (req.url.includes('auth')) {
-    console.log('Não precisa de token');
     return next(req);
   }
   if (token !== null) {
-    console.log('Tem Token');
-
     const newReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`,
@@ -20,7 +25,7 @@ export const requestsInterceptor: HttpInterceptorFn = (req, next) => {
     });
     return next(newReq);
   }
-  console.log('Não tem token');
+
   router.navigate(['/login']);
   return next(req);
 };
